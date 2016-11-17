@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from flutt.views import timeline, create_flutt, search_flutts
 
 urlpatterns = [
+    url(r'^search?/$', search_flutts),
     url(r'^admin/', admin.site.urls),
+    url(r'^post?/$', create_flutt),
+    url(r'', timeline)
+
 ]

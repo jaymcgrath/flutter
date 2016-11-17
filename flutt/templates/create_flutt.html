@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Create a flutt {% endblock %}
+{% block main_content %}
+    <div class="container" style="padding:25px">
+    <form action="" method="post">
+        {%  csrf_token %}
+        <div class="well col-xs-12">
+            <h3>Sound off like you've got a pair!</h3>
+                {{ form.as_p }}
+            <input type="submit" value = "tell the world" class="btn-info">
+            </form>
+        </div>
+    </div>
+{% endblock %}

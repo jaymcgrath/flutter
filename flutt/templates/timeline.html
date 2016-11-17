@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="row">
+    <div class="col-md-3 col-xs-12">
+        <div class="well">
+            <form action="/search/" method="get">
+            {{ search_form.query_text }}
+                <input type="submit" value="search Flutts" class="btn-info">
+            </form>
+        </div>
+
+        <div class="well">
+            <a href="/post/">Go Flutt Yourself</a>
+        </div>
+
+    </div>
+    <div class="col-md-9 col-xs-12">
+        {% for flutt in flutts %}
+            <div class="well">
+            <span class="glyphicon glyphicon-bullhorn" style="font-size:24px"></span>
+                <b> {{ flutt.author }}:</b>
+            {{ flutt.body }}
+            </div>
+        {%  endfor %}
+    </div>
+</div>
+
+
+{%  endblock %}
